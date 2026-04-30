@@ -28,7 +28,6 @@
 
 # AWS credentials and configuration
 .aws/
-config/
 aws-exports.js
 
 # Amplify
