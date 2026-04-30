@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.mango-primary {
+  background-color: #ff8c00;
+}
+
+.mango-secondary {
+  background-color: #ffa500;
+}
+
+.mango-accent {
+  background-color: #ff6347;
+}
+
+.mango-text {
+  color: #ff8c00;
+}
+
+.mango-light {
+  background-color: #fff8f0;
+}
+
+.mango-dark {
+  background-color: #cc7000;
+}

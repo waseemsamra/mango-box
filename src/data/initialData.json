@@ -1,0 +1,384 @@
+{
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Mangoes",
+      "slug": "mangoes",
+      "description": "Premium Pakistani mangoes from the best orchards",
+      "parentId": null,
+      "image": "/images/categories/mangoes.jpg",
+      "displayPriority": 1,
+      "status": "Active",
+      "productCount": 3
+    },
+    {
+      "id": "cat-2",
+      "name": "Vegetables",
+      "slug": "vegetables",
+      "description": "Fresh organic vegetables from local farms",
+      "parentId": null,
+      "image": "/images/categories/vegetables.jpg",
+      "displayPriority": 2,
+      "status": "Active",
+      "productCount": 2
+    },
+    {
+      "id": "cat-3",
+      "name": "Fruits",
+      "slug": "fruits",
+      "description": "Seasonal fruits from across Pakistan",
+      "parentId": null,
+      "image": "/images/categories/fruits.jpg",
+      "displayPriority": 3,
+      "status": "Active",
+      "productCount": 2
+    }
+  ],
+  "units": [
+    {
+      "id": "unit-1",
+      "name": "Kilogram",
+      "abbreviation": "kg",
+      "type": "Weight",
+      "baseValue": 1,
+      "status": "Active"
+    },
+    {
+      "id": "unit-2",
+      "name": "Gram",
+      "abbreviation": "g",
+      "type": "Weight",
+      "baseValue": 0.001,
+      "status": "Active"
+    },
+    {
+      "id": "unit-3",
+      "name": "Pound",
+      "abbreviation": "lb",
+      "type": "Weight",
+      "baseValue": 0.453592,
+      "status": "Active"
+    },
+    {
+      "id": "unit-4",
+      "name": "Dozen",
+      "abbreviation": "dz",
+      "type": "Quantity",
+      "baseValue": 12,
+      "status": "Active"
+    },
+    {
+      "id": "unit-5",
+      "name": "Piece",
+      "abbreviation": "pc",
+      "type": "Quantity",
+      "baseValue": 1,
+      "status": "Active"
+    },
+    {
+      "id": "unit-6",
+      "name": "Box",
+      "abbreviation": "box",
+      "type": "Quantity",
+      "baseValue": 1,
+      "status": "Active"
+    },
+    {
+      "id": "unit-7",
+      "name": "Liter",
+      "abbreviation": "L",
+      "type": "Volume",
+      "baseValue": 1,
+      "status": "Active"
+    },
+    {
+      "id": "unit-8",
+      "name": "Milliliter",
+      "abbreviation": "ml",
+      "type": "Volume",
+      "baseValue": 0.001,
+      "status": "Active"
+    }
+  ],
+  "origins": [
+    {
+      "id": "origin-1",
+      "name": "Mirpur Khas",
+      "region": "Sindh",
+      "country": "Pakistan",
+      "code": "MPK",
+      "status": "Active",
+      "productCount": 1
+    },
+    {
+      "id": "origin-2",
+      "name": "Multan",
+      "region": "Punjab",
+      "country": "Pakistan",
+      "code": "MUX",
+      "status": "Active",
+      "productCount": 1
+    },
+    {
+      "id": "origin-3",
+      "name": "Thatta",
+      "region": "Sindh",
+      "country": "Pakistan",
+      "code": "THA",
+      "status": "Active",
+      "productCount": 1
+    },
+    {
+      "id": "origin-4",
+      "name": "Swat Valley",
+      "region": "Khyber Pakhtunkhwa",
+      "country": "Pakistan",
+      "code": "SWT",
+      "status": "Active",
+      "productCount": 1
+    },
+    {
+      "id": "origin-5",
+      "name": "Quetta Orchards",
+      "region": "Balochistan",
+      "country": "Pakistan",
+      "code": "QTA",
+      "status": "Active",
+      "productCount": 1
+    }
+  ],
+  "currencies": [
+    {
+      "id": "curr-1",
+      "name": "Pakistani Rupee",
+      "code": "PKR",
+      "symbol": "₨",
+      "exchangeRate": 1,
+      "isBase": true,
+      "status": "Active"
+    },
+    {
+      "id": "curr-2",
+      "name": "US Dollar",
+      "code": "USD",
+      "symbol": "$",
+      "exchangeRate": 278.50,
+      "isBase": false,
+      "status": "Active"
+    },
+    {
+      "id": "curr-3",
+      "name": "Euro",
+      "code": "EUR",
+      "symbol": "€",
+      "exchangeRate": 302.75,
+      "isBase": false,
+      "status": "Active"
+    },
+    {
+      "id": "curr-4",
+      "name": "British Pound",
+      "code": "GBP",
+      "symbol": "£",
+      "exchangeRate": 351.25,
+      "isBase": false,
+      "status": "Active"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Sindhri Mangoes",
+      "description": "Premium Sindhri mangoes known for their sweet taste and vibrant color. Hand-picked at peak ripeness from Mirpur Khas orchards.",
+      "price": 450,
+      "categoryId": "cat-1",
+      "unitId": "unit-1",
+      "originId": "origin-1",
+      "currencyId": "curr-1",
+      "images": [
+        "/images/products/sindhri-mangoes-1.jpg",
+        "/images/products/sindhri-mangoes-2.jpg",
+        "/images/products/sindhri-mangoes-3.jpg"
+      ],
+      "stock": 100,
+      "sku": "MNG-SIN-001",
+      "status": "Active",
+      "featured": true,
+      "rating": 4.5,
+      "reviewCount": 128,
+      "mainImage": "/images/products/sindhri-mangoes-1.jpg",
+      "thumbnailImages": [
+        "/images/products/sindhri-mangoes-2.jpg",
+        "/images/products/sindhri-mangoes-3.jpg"
+      ],
+      "badges": ["Freshly Picked", "Premium Quality"],
+      "tagline": "Sweetness from the heart of Sindh",
+      "location": "Mirpur Khas, Sindh",
+      "subtitle": "Seasonal Special",
+      "boxSizes": ["1kg", "2kg", "5kg"],
+      "boxLabels": ["Perfect for families", "Great value", "Bulk savings"],
+      "originStory": "Our Sindhri mangoes are cultivated in the fertile lands of Mirpur Khas, where generations of farmers have perfected the art of growing these golden fruits.",
+      "storageTips": "Store at room temperature until ripe, then refrigerate for up to 5 days.",
+      "pesticideFree": true,
+      "sugarLevel": "High"
+    },
+    {
+      "id": "prod-2",
+      "name": "Anwar Ratol",
+      "description": "Famous Anwar Ratol mangoes from Multan, known for their unique flavor and aroma. Small but incredibly sweet and fiberless.",
+      "price": 380,
+      "categoryId": "cat-1",
+      "unitId": "unit-2",
+      "originId": "origin-2",
+      "currencyId": "curr-1",
+      "images": [
+        "/images/products/anwar-ratol-1.jpg",
+        "/images/products/anwar-ratol-2.jpg",
+        "/images/products/anwar-ratol-3.jpg"
+      ],
+      "stock": 150,
+      "sku": "MNG-ANW-001",
+      "status": "Active",
+      "featured": true,
+      "rating": 4.8,
+      "reviewCount": 89,
+      "mainImage": "/images/products/anwar-ratol-1.jpg",
+      "thumbnailImages": [
+        "/images/products/anwar-ratol-2.jpg",
+        "/images/products/anwar-ratol-3.jpg"
+      ],
+      "badges": ["Premium", "Limited Stock"],
+      "tagline": "The king of mangoes",
+      "location": "Multan, Punjab",
+      "subtitle": "Premium Selection",
+      "boxSizes": ["500g", "1kg", "2kg"],
+      "boxLabels": ["Sweet treat", "Family pack", "Gift box"],
+      "originStory": "Anwar Ratol mangoes have been cultivated in Multan for over a century, using traditional farming methods passed down through generations.",
+      "storageTips": "Keep in a cool, dry place. Consume within 3-4 days of purchase for best taste.",
+      "pesticideFree": true,
+      "sugarLevel": "Very High"
+    },
+    {
+      "id": "prod-3",
+      "name": "Farm Tomatoes",
+      "description": "Fresh, juicy tomatoes grown organically in Thatta farms. Perfect for salads, cooking, and making sauces.",
+      "price": 120,
+      "categoryId": "cat-2",
+      "unitId": "unit-1",
+      "originId": "origin-3",
+      "currencyId": "curr-1",
+      "images": [
+        "/images/products/tomatoes-1.jpg",
+        "/images/products/tomatoes-2.jpg"
+      ],
+      "stock": 200,
+      "sku": "VEG-TOM-001",
+      "status": "Active",
+      "featured": false,
+      "rating": 4.2,
+      "reviewCount": 45,
+      "mainImage": "/images/products/tomatoes-1.jpg",
+      "thumbnailImages": [
+        "/images/products/tomatoes-2.jpg"
+      ],
+      "badges": ["Organic", "Farm Fresh"],
+      "tagline": "Farm-to-table freshness",
+      "location": "Thatta Farms",
+      "subtitle": "Organic Produce",
+      "boxSizes": ["1kg", "2kg"],
+      "boxLabels": ["Daily needs", "Weekly supply"],
+      "originStory": "Our tomatoes are grown using sustainable farming practices in the fertile lands of Thatta, ensuring the best quality and taste.",
+      "storageTips": "Store at room temperature away from direct sunlight. Use within 5-7 days.",
+      "pesticideFree": true,
+      "sugarLevel": "Low"
+    },
+    {
+      "id": "prod-4",
+      "name": "Swat Peaches",
+      "description": "Sweet and juicy peaches from the pristine Swat Valley. Known for their perfect balance of sweetness and acidity.",
+      "price": 550,
+      "categoryId": "cat-3",
+      "unitId": "unit-1",
+      "originId": "origin-4",
+      "currencyId": "curr-1",
+      "images": [
+        "/images/products/peaches-1.jpg",
+        "/images/products/peaches-2.jpg"
+      ],
+      "stock": 80,
+      "sku": "FRU-PEA-001",
+      "status": "Active",
+      "featured": false,
+      "rating": 4.6,
+      "reviewCount": 67,
+      "mainImage": "/images/products/peaches-1.jpg",
+      "thumbnailImages": [
+        "/images/products/peaches-2.jpg"
+      ],
+      "badges": ["Mountain Fresh", "Seasonal"],
+      "tagline": "Himalayan sweetness",
+      "location": "Swat Valley",
+      "subtitle": "Mountain Produce",
+      "boxSizes": ["1kg", "2kg"],
+      "boxLabels": ["Fresh harvest", "Family pack"],
+      "originStory": "Our peaches are grown in the clean, mountain air of Swat Valley, where the unique climate produces exceptionally sweet and flavorful fruit.",
+      "storageTips": "Refrigerate immediately. Consume within 3-4 days for best quality.",
+      "pesticideFree": true,
+      "sugarLevel": "Medium"
+    },
+    {
+      "id": "prod-5",
+      "name": "Crunchy Carrots",
+      "description": "Fresh, crunchy carrots from Quetta orchards. Rich in vitamins and perfect for snacking or cooking.",
+      "price": 180,
+      "categoryId": "cat-2",
+      "unitId": "unit-1",
+      "originId": "origin-5",
+      "currencyId": "curr-1",
+      "images": [
+        "/images/products/carrots-1.jpg",
+        "/images/products/carrots-2.jpg"
+      ],
+      "stock": 120,
+      "sku": "VEG-CAR-001",
+      "status": "Active",
+      "featured": false,
+      "rating": 4.1,
+      "reviewCount": 34,
+      "mainImage": "/images/products/carrots-1.jpg",
+      "thumbnailImages": [
+        "/images/products/carrots-2.jpg"
+      ],
+      "badges": ["Rich in Vitamins", "Fresh"],
+      "tagline": "Crunchy goodness",
+      "location": "Quetta Orchards",
+      "subtitle": "Root Vegetables",
+      "boxSizes": ["1kg", "2kg"],
+      "boxLabels": ["Healthy snack", "Cooking essential"],
+      "originStory": "Our carrots are grown in the high-altitude orchards of Quetta, where the cool climate produces sweet, crunchy vegetables.",
+      "storageTips": "Refrigerate in a plastic bag. Remove greens to extend shelf life up to 2 weeks.",
+      "pesticideFree": true,
+      "sugarLevel": "Low"
+    }
+  ],
+  "users": [
+    {
+      "id": "user-1",
+      "name": "admin",
+      "email": "admin@kisanfresh.com",
+      "role": "Admin",
+      "permissions": ["read", "write", "delete", "manage"],
+      "status": "Active",
+      "password": "admin123"
+    },
+    {
+      "id": "user-2",
+      "name": "Store Manager",
+      "email": "manager@kisanfresh.com",
+      "role": "Manager",
+      "permissions": ["read", "write", "manage"],
+      "status": "Active",
+      "password": "manager123"
+    }
+  ]
+}

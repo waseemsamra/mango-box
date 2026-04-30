@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KisanFresh - Farm Fresh Pakistani Produce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#6f7a6b",
+                        "inverse-primary": "#78dc77",
+                        "on-tertiary-fixed-variant": "#603f33",
+                        "on-primary-fixed": "#002204",
+                        "surface-bright": "#f5fbef",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary": "#745b00",
+                        "surface-container-highest": "#dee4d9",
+                        "on-surface-variant": "#3f4a3c",
+                        "background": "#f5fbef",
+                        "secondary-fixed": "#ffe08b",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#006e1c",
+                        "primary": "#006e1c",
+                        "primary-fixed": "#94f990",
+                        "secondary-fixed-dim": "#f1c100",
+                        "on-surface": "#171d16",
+                        "surface-container-high": "#e4eade",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#bd9283",
+                        "inverse-on-surface": "#edf3e7",
+                        "on-tertiary-container": "#492c20",
+                        "primary-container": "#4caf50",
+                        "surface-container-low": "#f0f6ea",
+                        "on-primary-container": "#003c0b",
+                        "on-secondary-container": "#6e5700",
+                        "inverse-surface": "#2c322a",
+                        "on-primary-fixed-variant": "#005313",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#4caf50",
+                        "surface": "#f5fbef",
+                        "on-secondary-fixed-variant": "#584400",
+                        "surface-variant": "#dee4d9",
+                        "on-background": "#171d16",
+                        "secondary-container": "#fecb00",
+                        "surface-dim": "#d6dcd0",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#becab9",
+                        "tertiary-fixed-dim": "#ebbcac",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#7a5649",
+                        "surface-container": "#eaf0e4",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding": "64px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-glow {
+            box-shadow: 0 10px 40px -10px rgba(0, 110, 28, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-white/95 dark:bg-stone-900/95 docked full-width top-0 sticky z-50 border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-green-900/5">
+<div class="flex justify-between items-center w-full px-4 md:px-8 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tight text-green-700 dark:text-green-500 font-display">KisanFresh</span>
+<nav class="hidden md:flex items-center gap-6 font-label-lg">
+<a class="text-green-700 dark:text-green-400 font-bold border-b-2 border-green-700 pb-1" href="#">Home</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-green-600 transition-colors" href="#">Shop</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-green-600 transition-colors" href="#">Offers</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end">
+<div class="relative hidden lg:block w-64 max-w-xs">
+<input class="w-full bg-surface-container-low border-outline-variant rounded-full py-2 pl-10 pr-4 text-sm focus:ring-primary focus:border-primary" placeholder="Search for fresh mangoes..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-stone-800 dark:text-stone-100 hover:bg-green-50/50 dark:hover:bg-green-900/20 rounded-lg active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 text-stone-800 dark:text-stone-100 hover:bg-green-50/50 dark:hover:bg-green-900/20 rounded-lg active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="px-4 md:px-8 pt-8 pb-16">
+<div class="relative rounded-3xl overflow-hidden min-h-[500px] flex items-center bg-stone-900 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/60 to-transparent z-10"></div>
+<img alt="Sindhri Mangoes" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up of vibrant golden yellow Sindhri mangoes on a rustic wooden tray with warm sunlight highlighting their smooth skin and lush leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAldBSy7sRhOCoD1JRtVEAHqlVg0ThTJIxPqPGQSUPqFTlc5JMCR9FC6lYC44_FV1NnH1DmRC860W5bPv4TGKe-YF3hxtbttfEki_GqTeaDrkEV0nPV6iBAv3X2R7X-zsrYclrPIYwgyT3zTAPGzDq4WSlUm6PLMOHaytkvnC9HqDomwzRKvqqNqQzf2a9kIi943sylYWBeeifKwAepmnGeBg7lcfIZCWYSjdcLGUXOYHkejQYJQGeHbis7o4UglYuWcVl2unSwvjDi"/>
+<div class="relative z-20 px-8 md:px-16 max-w-2xl">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-label-sm mb-6 uppercase tracking-wider font-bold">In Season Now</span>
+<h1 class="font-display text-display text-white mb-6 leading-[1.1]">The King of Fruits: Sindhri Mangoes</h1>
+<p class="text-stone-200 text-body-lg mb-10 leading-relaxed">Experience the legendary sweetness and velvety texture of Sindhri mangoes, harvested at dawn from the sun-drenched orchards of Sindh.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-white px-10 py-4 rounded-xl font-label-lg transition-all active:scale-95 flex items-center justify-center gap-2">
+                            Shop Now
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/20 text-white px-10 py-4 rounded-xl font-label-lg transition-all active:scale-95">
+                            Learn More
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Seasonal Mangoes Section - Asymmetric Bento Layout -->
+<section class="px-4 md:px-8 py-section-padding">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Seasonal Mangoes</h2>
+<p class="text-on-surface-variant max-w-lg">Straight from the orchards to your doorstep. Choose from our premium seasonal varieties.</p>
+</div>
+<button class="text-primary font-label-lg hover:underline underline-offset-4 hidden md:block">View all varieties</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
+<!-- Main Feature -->
+<div class="md:col-span-6 lg:col-span-7 bg-surface-container-low rounded-3xl p-8 flex flex-col justify-between group cursor-pointer hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary-fixed">
+<div class="relative h-72 rounded-2xl overflow-hidden mb-8">
+<img alt="Chaunsa Mangoes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Basket of Chaunsa mangoes with their characteristic light yellow skin and sweet aromatic presence in a bright orchard setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgXLQdkojrelXk_s2D6-rkI6r98p4KCh0uj4dNWf_CX-b8R1kasVbxITvIQEvgOQoNIw8RdTiOkjFxYqCXEpwMIBhyulSyYKzHGEMCNwM8uYivKPgTe6IKxdjBdpknScrvPPhEFif-IAFdhf89h0Tt88ee76N98eX97P4UwO8s8bZPkTSBdl9PGoEs8u5PhKjdNS3JkzKs-AmYlyNVGNThrinR3plANnMgDy_QmQX0by1-aXZvnVcoiLox-zYA8M03iQj7G7sp4wT9"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-label-sm font-bold text-primary">Best Flavor</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-headline-md text-headline-md">Chaunsa (White)</h3>
+<span class="text-tertiary font-bold text-headline-md">Rs. 350 / kg</span>
+</div>
+<p class="text-on-surface-variant mb-6">Known for its uniquely sweet and rich aroma, often called the 'nectar of heaven'.</p>
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-label-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Secondary Mangoes -->
+<div class="md:col-span-6 lg:col-span-5 grid grid-cols-1 gap-6">
+<div class="bg-surface-container-high rounded-3xl p-6 flex gap-6 items-center group cursor-pointer hover:shadow-lg transition-all">
+<div class="w-32 h-32 rounded-2xl overflow-hidden shrink-0">
+<img alt="Anwar Ratol" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up of Anwar Ratol mangoes, small and intensely sweet with thin yellow skin on a bright plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsQ9Rt1vqEkZ5bYFwlFYoPW3UdEPyPXuv0DfanVkpo6uTHIZPsPlg5mIwx6RjLkPCoeTNvHJJXQaUWf6GE9KpS2SJzb7pDVV3JLD7N9M49fj9zx8WgauhV0rkt-Y_nQXI9--i9sqHxUn-ZsqzEgANGHwkUyt8q3L9BZipdfL8P5Nq_d5cpcCCPYMyE6gEhU_WLBvhDPDdjz97EFFRofAL53eVNSLighhpe5sQuF_L1dXFUnofJV98uOXwtXJSG_YJ_v_Ge5Idjn_Ru"/>
+</div>
+<div>
+<h4 class="font-label-lg text-lg mb-1">Anwar Ratol</h4>
+<p class="text-label-sm text-on-surface-variant mb-3">Intense sweetness, pocket-sized flavor.</p>
+<span class="text-tertiary font-bold">Rs. 420 / kg</span>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-3xl p-6 flex gap-6 items-center group cursor-pointer hover:shadow-lg transition-all">
+<div class="w-32 h-32 rounded-2xl overflow-hidden shrink-0">
+<img alt="Langra Mango" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Vibrant green Langra mango with its distinct fibrous-less juicy pulp in a sunlit kitchen window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvgZRRn_hFi6y2FEuzoLGL18ePouj6TsYtv02G0Tzhojx5Cm2uXt0Wfnn6dgwBWKdsg0iFELv69YfeIyfpTk0ZIIy2P7Vvn-DLsGlEHHYXtjHcN9dC6TBwadMuYqPZ2LvyxYWqIW9BhEZWOfVBs3L6p_MQN7cI9w3Ovocx4Jqw5gX5XHlzgp7aJZMTQtSa2yOIZk3yRPG8yVh17aYDL2sBzhtOaB9a5bbmE5fpoL7ECMyXm0LD5yLdw5C4oCkEjyvNDw_nVjTafpNk"/>
+</div>
+<div>
+<h4 class="font-label-lg text-lg mb-1">Langra</h4>
+<p class="text-label-sm text-on-surface-variant mb-3">Zesty green exterior, melt-in-mouth sweetness.</p>
+<span class="text-tertiary font-bold">Rs. 280 / kg</span>
+</div>
+</div>
+<div class="bg-secondary-fixed rounded-3xl p-6 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[48px] text-on-secondary-fixed mb-4">local_shipping</span>
+<h4 class="font-headline-md text-on-secondary-fixed mb-2">Gift a Box</h4>
+<p class="text-on-secondary-fixed-variant text-label-sm mb-4">Premium export quality boxes for your loved ones.</p>
+<button class="bg-on-secondary-fixed text-white px-6 py-2 rounded-full font-label-lg">Customize</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Fresh Vegetables -->
+<section class="px-4 md:px-8 py-section-padding bg-surface-container-lowest rounded-[3rem] mx-4 md:mx-8 shadow-sm">
+<div class="flex justify-between items-center mb-10">
+<h2 class="font-headline-lg text-headline-lg">Daily Fresh Vegetables</h2>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-gutter">
+<!-- Vegetable Card -->
+<div class="group bg-surface rounded-2xl p-4 transition-all hover:organic-glow cursor-pointer border border-transparent hover:border-primary-fixed">
+<div class="relative h-40 bg-white rounded-xl overflow-hidden mb-4">
+<img alt="Fresh Tomatoes" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Vibrant red heirloom tomatoes with green stems, fresh and juicy on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgHym_iDxZ2d9Wp9W_LAVm-mFiRRi1mm17MCYnobv0lC8-wcN9aSwu3LyfB8eTmzDb5uFESBd33MFC_dIlNNarjcaprKwBbE93cmeLvgqvFrgOTKog7nq4oKV6v81YFmCHa7jAPpS77YsaQaoc2dvizt_adJL64ukTPGNVJUxj6aKwqHGJI4TmhjOcBZwmRdw2Bxbkrre9IhdpsrmK26kAxC7q9vIZ2Kp3SjezC1fcr0m2Kr-rWLGcSf3I5pkAtnchIMnHTNRRTIyg"/>
+<span class="absolute top-2 right-2 bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur-md">Local Sindh</span>
+</div>
+<div class="space-y-1">
+<h5 class="font-label-lg text-on-surface">Red Tomatoes</h5>
+<p class="text-label-sm text-on-surface-variant">500g</p>
+<div class="flex justify-between items-center pt-2">
+<span class="font-bold text-tertiary">Rs. 60</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-2xl p-4 transition-all hover:organic-glow cursor-pointer border border-transparent hover:border-primary-fixed">
+<div class="relative h-40 bg-white rounded-xl overflow-hidden mb-4">
+<img alt="Lady Finger" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Fresh crisp green okra (bhindi) ladyfingers piled neatly on a wooden surface with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsLSEy_yJifWVYZayCVSTL-8-LtZ4E5AFJjuh1IvO7he8zX8wtgijmHj0dJZ4xDiwqfNI2DKZtrLizlq-I2EI_WMVN6z5vmdJracW9PuPIoxqTB-d0GyxH4-811QVVhDPDusIfhRVYNZBfxhTmxy5mv7_uzfqaBSbxxKBuFg81x0PzZ_xFwPxathKStB5JuzommT1r6y6vxZU5WtMPST9wl-IqQFmYWhZvtjZLcVnZxuFHHtxm7KlIOsVcHWQoASbEhQuLRvkniPFB"/>
+</div>
+<div class="space-y-1">
+<h5 class="font-label-lg text-on-surface">Lady Finger (Bhindi)</h5>
+<p class="text-label-sm text-on-surface-variant">500g</p>
+<div class="flex justify-between items-center pt-2">
+<span class="font-bold text-tertiary">Rs. 95</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-2xl p-4 transition-all hover:organic-glow cursor-pointer border border-transparent hover:border-primary-fixed">
+<div class="relative h-40 bg-white rounded-xl overflow-hidden mb-4">
+<img alt="Green Chili" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Heap of bright green, sharp chillies with water droplets reflecting morning dew, vibrant and fresh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrZe90HkAFtNGg7epf_TQFRNicgoYau6rmX3Je9WMlchnb-nitQ-iPtpYOI4r3yK63AH-u5imLu2ESmjVauzg9MIRKc5h5Ma3ZMj1pbtz_o9nUzLBOrezMbQH6ZicC-ZPHZFuY-f3suoXZLLlkSDhMEAwtokWU6oBq7XoQiiBQaX1owg8nY-Wru-sD322SPnkTVYGXoFnyv5kZqEQ9FH3g29804o-4evAt72X4IRL_mcj4sMLOY9OOjBBiwT1VNqK0n5PSufKEXmTt"/>
+</div>
+<div class="space-y-1">
+<h5 class="font-label-lg text-on-surface">Green Chili</h5>
+<p class="text-label-sm text-on-surface-variant">250g</p>
+<div class="flex justify-between items-center pt-2">
+<span class="font-bold text-tertiary">Rs. 40</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-2xl p-4 transition-all hover:organic-glow cursor-pointer border border-transparent hover:border-primary-fixed">
+<div class="relative h-40 bg-white rounded-xl overflow-hidden mb-4">
+<img alt="Potatoes" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Earth-dusted organic potatoes on a burlap sack, representing harvested freshness from the ground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM369ex78i6O5vBBeF-YME0W6LhnuA8InhqmXfA3eQFLokBM73ZpLxcXWgUBmVr2HlosiCf-T2g8_Vzn87ft3Ee1VuaoX5aVrDod-Ae0qDlgG0FCjknGKaMZ8E3KWVqM4esdJkNgxMX5c5iJZEPjUzpESfJ1FQ1TEW2SFeVvSQqpLp1r5KVSL4KzbxPdpnxFJfba72breyLXRVKwrgX6lNkT4y6G8gRrx7pxnepNr4yUyuCEkRIL6TrwVhw87XTAv7ZrQ8pelweFTF"/>
+</div>
+<div class="space-y-1">
+<h5 class="font-label-lg text-on-surface">New Potatoes</h5>
+<p class="text-label-sm text-on-surface-variant">1kg</p>
+<div class="flex justify-between items-center pt-2">
+<span class="font-bold text-tertiary">Rs. 80</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group bg-surface rounded-2xl p-4 transition-all hover:organic-glow cursor-pointer border border-transparent hover:border-primary-fixed hidden lg:block">
+<div class="relative h-40 bg-white rounded-xl overflow-hidden mb-4">
+<img alt="Carrots" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Bright orange carrots with their green tops still attached, lying on a dark stone surface for a premium culinary feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQBlfIcDn6CMUxsz9pbewqpE1NoCwVNLxIAe9dJfLWRC37yCkvBoB1GPjq0k766NPHYgJzDuJLX9y1WFF-EAOi1NOCfRYeoBd00FST7fp3qQVJR8TCEAeWLGFuKAKOoBCeSvnpc7Lp2NsLs9RD1187SYYDvv7i8EVMAVUWpArrPIqABKla1FtCFhBIHjSJvGwbXfhB1uCOUFIw272gd-QBBBlJD4M7Fv7GCrhCM93KrLJtXSaj4B8PgMMry5Y-VmfOZ637tctmmoyV"/>
+</div>
+<div class="space-y-1">
+<h5 class="font-label-lg text-on-surface">Fresh Carrots</h5>
+<p class="text-label-sm text-on-surface-variant">1kg</p>
+<div class="flex justify-between items-center pt-2">
+<span class="font-bold text-tertiary">Rs. 110</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Favorites -->
+<section class="px-4 md:px-8 py-section-padding">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-4">Customer Favorites</h2>
+<p class="text-on-surface-variant">Voted most loved products this week by our community.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="relative group h-96 rounded-3xl overflow-hidden">
+<img alt="Fruit Basket" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A diverse basket of tropical fruits including mangoes, bananas, and guavas, artistically arranged on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-es0Dt9VbvjuLvvFBEHp8YarJnqPzmli7lVlL1NV-JVD60l9AiNXYFbK4KqZ9NORfNRa2TzRRkz6TIdz61k7iP0x-mlWeo36koEeLObl1iAiB9KPRyGk5dgb7Y1RFd0qZ_7IyoAFWtnAonF2hmplKzKngV_lic7ynUneRy06jYsr7IdVAGV1GPEOJUt0BcKyLyUeT1YzNtZ8l0vrq4G0HTT897lQPoJEAGdI_hA8vcZ8Fw3cfOH9yCmpK_rFgwudXnTuvKd0b4ctt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-white">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold mb-3 inline-block">Best Seller</span>
+<h4 class="font-headline-md text-white mb-2">Weekly Fruit Bundle</h4>
+<div class="flex justify-between items-center">
+<p class="text-stone-300 text-label-sm">Essential vitamins for the family.</p>
+<span class="font-bold text-xl">Rs. 1200</span>
+</div>
+</div>
+</div>
+<div class="relative group h-96 rounded-3xl overflow-hidden">
+<img alt="Salad Mix" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Healthy bowl of fresh chopped salad with cucumbers, peppers, and leafy greens, brightly lit and appetizing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChhQp4IlSvhGPMKI9PSN97dba6qH21iSU9fwxnnXYHr81hGqAlH47IB2vroVe6HLakwAuhnVJ5vj4UGFfA47qwdh-lO6iL1p3P2QlkyiLOuD1lhUHmqtIMD6KH3Y4f0qs0Dbj2nxAxtNoo_8BRemFb_mJA_YkH3MEHzbKV337dZoQUk5oJeYS7rLLWXLUh7l738SoWfssOtEA1B-fj8IMzkniirc5Q3Tb_8jkID30dBVHT2EyUvE9lQyiY7QFJSdcqi7kqPJkLSySs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-white">
+<span class="bg-primary-container text-white px-3 py-1 rounded-full text-[10px] font-bold mb-3 inline-block">New Arrival</span>
+<h4 class="font-headline-md text-white mb-2">Organic Salad Box</h4>
+<div class="flex justify-between items-center">
+<p class="text-stone-300 text-label-sm">Pre-washed, ready-to-eat.</p>
+<span class="font-bold text-xl">Rs. 550</span>
+</div>
+</div>
+</div>
+<div class="relative group h-96 rounded-3xl overflow-hidden">
+<img alt="Herbs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Bunches of aromatic fresh coriander and mint tied with twine, intensely green and textured" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwayt21bl5SWO3X5BBPg0wg8JskiGhctYdtauJHkEDmEsjZNyq_EHIysX7WPkxSO3ioqcjE_MDrYPiCj6Gsyt4HLNOqhcH-qHlleWkvZ2NYuAMufFez3p0TRX58L_CNb74c1tPoUN1Yh7iWYP1epcHz019Q1Q9pmbhUegtuQZBRkXpPi3nM4XgrKN-PXptdk9Jlelmjpob-CBVj0SGahr_dzPMpxBXSRtVMMhtEEXpWC3lPSQEJcSaVwf0dF5Z1HoY6pB8sjMO2bpY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-white">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-[10px] font-bold mb-3 inline-block">Kitchen Essential</span>
+<h4 class="font-headline-md text-white mb-2">Desi Herb Kit</h4>
+<div class="flex justify-between items-center">
+<p class="text-stone-300 text-label-sm">Fresh mint &amp; coriander.</p>
+<span class="font-bold text-xl">Rs. 150</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-stone-950 w-full py-12 mt-16 border-t border-stone-200 dark:border-stone-800">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="space-y-4">
+<span class="font-bold text-green-800 dark:text-green-200 text-2xl font-display">KisanFresh</span>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-stone-600 dark:text-stone-400">Connecting Pakistani farmers directly to your kitchen. We ensure peak freshness and fair prices for both growers and customers.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">camera_alt</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="text-green-700 dark:text-green-400 font-bold uppercase text-xs tracking-widest">Our Produce</h5>
+<ul class="space-y-2">
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">About Sindhri Mangoes</a></li>
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Chaunsa Special</a></li>
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Organic Vegetables</a></li>
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Seasonal Bundles</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-green-700 dark:text-green-400 font-bold uppercase text-xs tracking-widest">Company</h5>
+<ul class="space-y-2">
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Quality Guarantee</a></li>
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Freshness Policy</a></li>
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Contact Farmer Support</a></li>
+<li><a class="text-stone-500 hover:text-green-600 transition-colors font-label-lg hover:underline decoration-green-500 underline-offset-4" href="#">Shipping Info</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-green-700 dark:text-green-400 font-bold uppercase text-xs tracking-widest">Subscribe</h5>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-stone-600 dark:text-stone-400">Get notified when the new mango season starts!</p>
+<form class="flex gap-2">
+<input class="bg-white dark:bg-stone-900 border-stone-200 dark:border-stone-800 rounded-xl text-sm py-2 px-4 focus:ring-primary focus:border-primary flex-1" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800 text-center">
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-stone-600 dark:text-stone-400 opacity-80">© 2024 KisanFresh. Harvested with Love in Pakistan.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-t border-stone-100 dark:border-stone-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 rounded-t-2xl">
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200 rounded-xl px-4 py-1 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1 hover:text-green-600 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1 hover:text-green-600 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold">Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1 hover:text-green-600 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold">Cart</span>
+</a>
+</nav>
+<!-- Floating Action Button (Only on Home) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 bg-primary-container text-on-primary-container p-4 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all z-40 hidden md:flex items-center gap-2 pr-6">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-label-lg">Farmer Support</span>
+</button>
+</body></html>

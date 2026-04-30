@@ -1,0 +1,73 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g @aws-amplify/cli
+    build:
+      commands:
+        - echo "Backend build complete - using hybrid RxDB + S3 setup"
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+  customHeaders:
+    - pattern: '**/*'
+      headers:
+        - key: Cache-Control
+          value: 'no-cache, no-store, must-revalidate'
+        - key: Pragma
+          value: 'no-cache'
+        - key: Expires
+          value: '0'
+    - pattern: '*.js'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.css'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.png'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.jpg'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.jpeg'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.gif'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.svg'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.ico'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.woff'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+    - pattern: '*.woff2'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
