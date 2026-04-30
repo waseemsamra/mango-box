@@ -8,10 +8,12 @@ backend:
       commands:
         - echo "Backend build complete - using hybrid RxDB + S3 setup"
 frontend:
+  rootDirectory: ./
   phases:
     preBuild:
       commands:
         - npm ci
+        - npm audit fix
     build:
       commands:
         - npm run build
