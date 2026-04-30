@@ -34,21 +34,22 @@ function App() {
     // Initialize database when app starts
     initDatabase().catch(console.error);
     
-    // Register service worker for production
-    if (process.env.NODE_ENV === 'production') {
-      const registerServiceWorker = async () => {
-        if ('serviceWorker' in navigator) {
-          try {
-            const registration = await navigator.serviceWorker.register('/service-worker.js');
-            console.log('Service Worker registered:', registration);
-          } catch (error) {
-            console.log('Service Worker registration failed:', error);
-          }
-        }
-      };
-      
-      registerServiceWorker();
-    }
+    // Service worker registration is disabled for now to fix build issues
+    // Will be enabled after successful deployment
+    // if (process.env.NODE_ENV === 'production') {
+    //   const registerServiceWorker = async () => {
+    //     if ('serviceWorker' in navigator) {
+    //       try {
+    //         const registration = await navigator.serviceWorker.register('/service-worker.js');
+    //         console.log('Service Worker registered:', registration);
+    //       } catch (error) {
+    //         console.log('Service Worker registration failed:', error);
+    //       }
+    //     }
+    //   };
+    //   
+    //   registerServiceWorker();
+    // }
   }, []);
 
   if (isLoading) {
