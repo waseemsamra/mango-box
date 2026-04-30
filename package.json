@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Farm Fresh Pakistani Produce - KisanFresh Website",
   "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
