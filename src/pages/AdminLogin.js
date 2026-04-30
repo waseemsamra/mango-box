@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { authService } from '../database/services';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -15,10 +14,13 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      const user = await authService.login(email, password);
-      console.log('Login successful:', user);
-      // Redirect to admin dashboard
-      navigate('/admin/dashboard');
+      // Simple authentication for testing
+      if (email === 'admin@kisanfresh.com' && password === 'admin123') {
+        console.log('Login successful');
+        navigate('/admin/dashboard');
+      } else {
+        throw new Error('Invalid credentials. Use admin@kisanfresh.com / admin123');
+      }
     } catch (err) {
       setError(err.message);
     } finally {
@@ -26,178 +28,99 @@ const AdminLogin = () => {
     }
   };
 
-  const togglePasswordVisibility = () => {
-    const passwordInput = document.getElementById('password');
-    const visibilityIcon = document.querySelector('[data-visibility-toggle] span');
-    
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      visibilityIcon.textContent = 'visibility_off';
-    } else {
-      passwordInput.type = 'password';
-      visibilityIcon.textContent = 'visibility';
-    }
-  };
-
   return (
-    <div className="bg-surface text-on-surface overflow-hidden">
-      <main className="flex h-screen w-full">
-        {/* Left Panel: Visual & Narration */}
-        <section className="hidden lg:flex lg:w-3/5 relative overflow-hidden bg-primary-container">
-          <div className="absolute inset-0 z-0">
-            <img 
-              alt="Agricultural Logistics" 
-              className="w-full h-full object-cover opacity-80 mix-blend-multiply" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4yYo2GASMwubm4iMMT5FC11qqqqZb6eW4Kfi4WWmNEMvcS6jBKEODUA7z8Vqcwh9IVPachK5HEez4Gv0AKKNgxiT7idf6bzLqt9YBlb7mO8SlEyu1fz3i5XlHvQJbSWBv1wQ4ZybVwqeN9lIFgGJPcgTgh_uu-EWccOfJqGmsXcGmlxK1s-mIXk0qU_Bt792pX4eE6cRB8mhfg5H3fj87Yhhai4lbvIZ-j9FwUA_DJknDf8wtxJvjXAbgt4dsJQuqVlOUTXjRJXav"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-primary/30"></div>
-          </div>
-          <div className="relative z-10 flex flex-col justify-end p-20 w-full text-on-primary">
-            <div className="mb-8">
-              <span className="inline-block bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full font-label-lg text-label-lg mb-4">
-                Enterprise Portal
-              </span>
-              <h1 className="font-display text-display leading-tight mb-6">
-                Powering Freshness<br/>Across the Nation.
-              </h1>
-              <p className="font-body-lg text-body-lg max-w-xl opacity-90 leading-relaxed">
-                Optimizing the journey from Pakistan's fertile fields to the urban doorstep. Manage supply chains, monitor inventory levels, and ensure quality standards are met at every node.
-              </p>
-            </div>
-            <div className="flex gap-12 mt-12 border-t border-white/20 pt-12">
-              <div>
-                <div className="font-headline-md text-headline-md">24/7</div>
-                <p className="font-label-sm text-label-sm opacity-70">Supply Monitoring</p>
-              </div>
-              <div>
-                <div className="font-headline-md text-headline-md">500+</div>
-                <p className="font-label-sm text-label-sm opacity-70">Verified Farmers</p>
-              </div>
-              <div>
-                <div className="font-headline-md text-headline-md">15m</div>
-                <p className="font-label-sm text-label-sm opacity-70">Average Harvest-to-Hub</p>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="text-center text-3xl font-extrabold text-gray-900">
+          KisanFresh Admin
+        </h2>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          Sign in to manage your fresh produce store
+        </p>
+      </div>
 
-        {/* Right Panel: Login Form */}
-        <section className="w-full lg:w-2/5 flex flex-col justify-center px-8 md:px-16 lg:px-24 bg-surface relative">
-          <div className="max-w-md w-full mx-auto">
-            <div className="mb-12">
-              <div className="flex items-center gap-2 mb-8">
-                <div className="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center">
-                  <span className="material-symbols-outlined text-on-primary-container" style={{fontVariationSettings: "'FILL' 1"}}>eco</span>
-                </div>
-                <span className="text-green-700 dark:text-green-400 text-xl font-extrabold tracking-tight">SabziFresh</span>
-              </div>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface mb-2">Admin Gateway</h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">Please enter your credentials to access the marketplace dashboard.</p>
-            </div>
-
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             {error && (
-              <div className="mb-6 p-4 bg-error-container text-on-error-container rounded-xl">
-                <p className="font-body-sm text-body-sm">{error}</p>
+              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded">
+                {error}
               </div>
             )}
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label className="block font-label-lg text-label-lg text-on-surface-variant mb-2" htmlFor="email">
-                  Work Email
-                </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <span className="material-symbols-outlined text-outline text-[20px]">mail</span>
-                  </div>
-                  <input 
-                    className="block w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary font-body-md transition-all outline-none" 
-                    id="email" 
-                    name="email" 
-                    placeholder="admin@kisanfresh.com" 
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <label className="block font-label-lg text-label-lg text-on-surface-variant" htmlFor="password">
-                    Password
-                  </label>
-                  <Link className="font-label-sm text-label-sm text-primary hover:underline" to="/forgot-password">
-                    Forgot password?
-                  </Link>
-                </div>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <span className="material-symbols-outlined text-outline text-[20px]">lock</span>
-                  </div>
-                  <input 
-                    className="block w-full pl-10 pr-12 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary font-body-md transition-all outline-none" 
-                    id="password" 
-                    name="password" 
-                    placeholder="••••••••" 
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                  <button 
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-outline" 
-                    type="button"
-                    onClick={togglePasswordVisibility}
-                    data-visibility-toggle
-                  >
-                    <span className="material-symbols-outlined text-[20px]">visibility</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-center">
-                <input 
-                  className="h-4 w-4 text-primary focus:ring-primary border-outline-variant rounded" 
-                  id="remember-me" 
-                  name="remember-me" 
-                  type="checkbox"
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email address
+              </label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                  placeholder="admin@kisanfresh.com"
                 />
-                <label className="ml-2 block font-label-sm text-label-sm text-on-surface-variant" htmlFor="remember-me">
-                  Keep me logged in for 30 days
-                </label>
               </div>
+            </div>
 
-              <button 
-                className="w-full py-4 px-6 bg-primary text-on-primary rounded-xl font-headline-md text-body-md shadow-md shadow-primary/20 hover:bg-primary/90 active:scale-[0.98] transition-all flex items-center justify-center gap-2" 
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <div className="mt-1">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+
+            <div>
+              <button
                 type="submit"
+                disabled={loading}
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50"
               >
-                Sign In to Dashboard
-                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
+                {loading ? 'Signing in...' : 'Sign in'}
               </button>
-            </form>
+            </div>
+          </form>
 
-            <div className="mt-12 pt-8 border-t border-outline-variant/30 text-center">
-              <p className="font-label-sm text-label-sm text-on-surface-variant">
-                Secure Enterprise Authentication. 
-                <br/>Authorized personnel only.
-              </p>
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">Test Credentials</span>
+              </div>
+            </div>
+
+            <div className="mt-6 text-sm text-gray-600 bg-gray-50 p-3 rounded">
+              <p className="font-medium">For testing:</p>
+              <p>Email: admin@kisanfresh.com</p>
+              <p>Password: admin123</p>
             </div>
           </div>
 
-          {/* Decorative Organic Element */}
-          <div className="absolute bottom-0 right-0 opacity-5 pointer-events-none translate-x-1/4 translate-y-1/4">
-            <span className="material-symbols-outlined text-[300px]" style={{fontVariationSettings: "'FILL' 1"}}>potted_plant</span>
+          <div className="mt-6">
+            <div className="text-center">
+              <Link to="/" className="font-medium text-green-600 hover:text-green-500">
+                ← Back to Home
+              </Link>
+            </div>
           </div>
-        </section>
-      </main>
-
-      {/* Success/Info Snackbars - purely visual for the login state */}
-      <div className="fixed top-8 right-8 flex flex-col gap-4 pointer-events-none">
-        <div className="bg-surface-container-highest border-l-4 border-secondary-container p-4 rounded-lg shadow-xl flex items-center gap-4 max-w-sm animate-fade-in">
-          <span className="material-symbols-outlined text-on-secondary-container">info</span>
-          <div className="font-label-sm text-label-sm text-on-surface">System Status: All logistics nodes operational in Punjab region.</div>
         </div>
       </div>
     </div>

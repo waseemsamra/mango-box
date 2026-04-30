@@ -8,6 +8,7 @@ import CustomerFavorites from './CustomerFavorites';
 import Footer from './Footer';
 
 const Home = () => {
+  console.log('Home component rendering...');
   return (
     <>
       <Navigation currentPage="home" />
