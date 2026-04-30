@@ -13,7 +13,7 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - npm audit fix
+        - npm audit --audit-level=high
     build:
       commands:
         - npm run build
