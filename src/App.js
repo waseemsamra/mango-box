@@ -52,37 +52,38 @@ function App() {
     // }
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-xl font-semibold text-on-surface">Initializing KisanFresh...</h2>
-          <p className="text-sm text-on-surface-variant mt-2">Setting up your fresh produce database</p>
-        </div>
-      </div>
-    );
-  }
+  // Temporarily bypass database loading to test admin routes
+  // if (isLoading) {
+  //   return (
+  //     <div className="min-h-screen bg-background flex items-center justify-center">
+  //       <div className="text-center">
+  //         <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+  //         <h2 className="text-xl font-semibold text-on-surface">Initializing KisanFresh...</h2>
+  //         <p className="text-sm text-on-surface-variant mt-2">Setting up your fresh produce database</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-  if (error) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center max-w-md">
-          <div className="w-16 h-16 bg-error/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="material-symbols-outlined text-error text-2xl">error</span>
-          </div>
-          <h2 className="text-xl font-semibold text-on-surface">Initialization Failed</h2>
-          <p className="text-sm text-on-surface-variant mt-2">{error}</p>
-          <button 
-            onClick={retry}
-            className="mt-4 px-6 py-2 bg-primary text-white rounded-xl font-medium hover:opacity-90 transition-all"
-          >
-            Retry
-          </button>
-        </div>
-      </div>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <div className="min-h-screen bg-background flex items-center justify-center">
+  //       <div className="text-center max-w-md">
+  //         <div className="w-16 h-16 bg-error/10 rounded-full flex items-center justify-center mx-auto mb-4">
+  //           <span className="material-symbols-outlined text-error text-2xl">error</span>
+  //         </div>
+  //         <h2 className="text-xl font-semibold text-on-surface">Initialization Failed</h2>
+  //         <p className="text-sm text-on-surface-variant mt-2">{error}</p>
+  //         <button 
+  //           onClick={retry}
+  //           className="mt-4 px-6 py-2 bg-primary text-white rounded-xl font-medium hover:opacity-90 transition-all"
+  //         >
+  //           Retry
+  //         </button>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <Router>
